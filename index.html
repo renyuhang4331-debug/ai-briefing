@@ -238,28 +238,28 @@ body {
   <div class="section" id="section-news">
     <div class="section-label">今日资讯</div>
     <div class="card">
+      <div class="card-title">Video-generation startup PixVerse raises $439M, valuation soars past $2B</div>
+      <div class="card-summary">With the cash, the company aims to expand its world model offering and reach customers across geographies.</div>
+      <div class="card-meta">
+        <span>来源: TechCrunch</span>
+      </div>
+      <a class="card-link" href="https://techcrunch.com/2026/07/13/video-generation-startup-pixverse-raises-439m-valuation-soars-past-2b/" target="_blank">阅读原文 →</a>
+    </div>
+<div class="card">
+      <div class="card-title">LightMem-Ego: Your AI Memory for Everyday Life</div>
+      <div class="card-summary">HuggingFace 社区今日热门论文，26 票推荐</div>
+      <div class="card-meta">
+        <span>来源: HuggingFace Daily Papers</span>
+      </div>
+      <a class="card-link" href="https://huggingface.co/papers/2607.11487" target="_blank">阅读原文 →</a>
+    </div>
+<div class="card">
       <div class="card-title">ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory</div>
       <div class="card-summary">HuggingFace 社区今日热门论文，59 票推荐</div>
       <div class="card-meta">
         <span>来源: HuggingFace Daily Papers</span>
       </div>
       <a class="card-link" href="https://huggingface.co/papers/2607.10350" target="_blank">阅读原文 →</a>
-    </div>
-<div class="card">
-      <div class="card-title">Already rich, already successful, why the last wave of tech winners is grinding again</div>
-      <div class="card-summary">They're rolling up their sleeves again, seemingly out of fear of missing AI's defining moment and, presumably, the irresistible allure of making even more money -- potentially a lot more.</div>
-      <div class="card-meta">
-        <span>来源: TechCrunch</span>
-      </div>
-      <a class="card-link" href="https://techcrunch.com/2026/07/13/already-rich-already-successful-why-the-last-wave-of-tech-winners-is-grinding-again/" target="_blank">阅读原文 →</a>
-    </div>
-<div class="card">
-      <div class="card-title">ABot-N1: Toward a General Visual Language Navigation Foundation Model</div>
-      <div class="card-summary">HuggingFace 社区今日热门论文，63 票推荐</div>
-      <div class="card-meta">
-        <span>来源: HuggingFace Daily Papers</span>
-      </div>
-      <a class="card-link" href="https://huggingface.co/papers/2607.10383" target="_blank">阅读原文 →</a>
     </div>
     <div class="swipe-hint">左滑查看今日知识 →</div>
   </div>
@@ -270,18 +270,18 @@ body {
     <div class="card knowledge-card">
       <div class="card-title">
         <span class="knowledge-emoji">👁️</span>
-        <span>多模态大模型的三种主流架构</span>
+        <span>扩散模型 vs. 自回归模型：生成式 AI 的两条技术路线</span>
       </div>
-      <div class="card-summary">当前多模态大模型主要有三种架构路线：① 视觉编码器+LLM 拼接式（如 LLaVA、GPT-4V）——用预训练的视觉编码器（ViT）将图像转为 token 序列，经投影层对齐后与文本 token 拼接，送入 LLM 生成回答；训练成本低，可利用现有 LLM 和视觉模型。② 原生多模态（如 Gemini、Chameleon）——从预训练阶段就用图文混合 token 训练，在架构层面统一处理文本和图像生成；上限高但训练成本巨大。③ 专家混合式（如 LLaMA-Vision）——多模态信号走不同的专家路径，在特定层融合；在计算效率和跨模态理解精度间取平衡。目前①路线性价比最高，是大多数开源方案的基座。</div>
-      <div class="card-meta">参考: 多模态大语言模型架构综述</div>
+      <div class="card-summary">扩散模型（如 Stable Diffusion、Sora）和自回归模型（如 GPT、Llama）是当前生成式 AI 的两大技术范式。扩散模型：从高斯噪声开始逐步去噪生成数据，生成质量高、天然适合连续数据（图像、视频），但采样速度慢（需多步迭代）。自回归模型：逐 token 预测下一个输出，擅长离散序列（文本、代码），推理速度快但缺乏全局一致性。近期趋势是两者融合：① 将图像/视频 token 化后用自回归模型生成（如 DALL-E 1、VideoPoet）；② 在扩散模型中引入 Transformer 主干（DiT，即 Diffusion Transformer），Sora 即采用此架构。理解两条路线的优劣有助于把握生成式 AI 的技术走向。</div>
+      <div class="card-meta">参考: 生成式 AI 技术路线对比</div>
     </div>
 <div class="card knowledge-card">
       <div class="card-title">
-        <span class="knowledge-emoji">🧠</span>
-        <span>大模型的 Scaling Laws：规模定律的三个维度</span>
+        <span class="knowledge-emoji">💡</span>
+        <span>AI 产品的 A/B 测试难点与对策</span>
       </div>
-      <div class="card-summary">Scaling Laws 是大模型时代的”第一性原理”。OpenAI 2020 年论文和 DeepMind 的 Chinchilla 论文共同揭示了模型性能与三个要素的关系：模型参数量（N）、训练数据量（D）和计算量（C）。关键结论：① 在给定计算预算下，存在最优的模型大小和数据量分配——Chinchilla 定律建议模型参数和训练 token 大致 1:20 的配比；② 很多大模型（如 GPT-3）实际上”训练不足”（undertrained），在更小的模型上投入更多数据效果更优；③ Scaling Laws 也推动了小模型技术的发展——通过更强的数据质量（数据过滤、合成数据）可以在较小模型尺寸上获得超出 Scaling Law 预测的性能。理解 Scaling Laws 有助于判断模型技术报告中的关键数据点。</div>
-      <div class="card-meta">参考: Training Compute-Optimal Large Language Models (Hoffmann et al., 2022)</div>
+      <div class="card-summary">AI 产品的 A/B 测试面临独特挑战：① 输出不确定性——同一个 prompt 两次返回结果可能不同，传统”控制变量”逻辑失效，需要加降采样和统计检验来分离随机方差；② 评估指标滞后——用户满意度可能在一两周后才体现（学习使用 AI 功能需要时间），短期指标（点击率）可能误导；③ 模型版本间行为不兼容——新模型可能在 90% 场景更好但在 10% 场景退化，需要长尾监控（按用户分群、按 prompt 类型细分）。应对策略：用 Interleaving 实验（将两个模型的输出并排展示让用户隐式选择，类似搜索排序的 interleaving 实验）；对核心场景做回归测试；设置 guardrail metrics（如用户举报率、人工求助率）作为必须不恶化的底线指标。</div>
+      <div class="card-meta">参考: A/B Testing for AI Products</div>
     </div>
     <div class="swipe-hint">← 右滑返回 &nbsp;|&nbsp; 左滑查看论文 →</div>
   </div>
