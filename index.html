@@ -238,20 +238,12 @@ body {
   <div class="section" id="section-news">
     <div class="section-label">今日资讯</div>
     <div class="card">
-      <div class="card-title">Already rich, already successful, why the last wave of tech winners is grinding again</div>
-      <div class="card-summary">They're rolling up their sleeves again, seemingly out of fear of missing AI's defining moment and, presumably, the irresistible allure of making even more money -- potentially a lot more.</div>
-      <div class="card-meta">
-        <span>来源: TechCrunch</span>
-      </div>
-      <a class="card-link" href="https://techcrunch.com/2026/07/13/already-rich-already-successful-why-the-last-wave-of-tech-winners-is-grinding-again/" target="_blank">阅读原文 →</a>
-    </div>
-<div class="card">
-      <div class="card-title">LightMem-Ego: Your AI Memory for Everyday Life</div>
-      <div class="card-summary">HuggingFace 社区今日热门论文，26 票推荐</div>
+      <div class="card-title">ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory</div>
+      <div class="card-summary">HuggingFace 社区今日热门论文，59 票推荐</div>
       <div class="card-meta">
         <span>来源: HuggingFace Daily Papers</span>
       </div>
-      <a class="card-link" href="https://huggingface.co/papers/2607.11487" target="_blank">阅读原文 →</a>
+      <a class="card-link" href="https://huggingface.co/papers/2607.10350" target="_blank">阅读原文 →</a>
     </div>
 <div class="card">
       <div class="card-title">Weak-to-Strong Generalization via Direct On-Policy Distillation</div>
@@ -261,6 +253,14 @@ body {
       </div>
       <a class="card-link" href="https://huggingface.co/papers/2607.05394" target="_blank">阅读原文 →</a>
     </div>
+<div class="card">
+      <div class="card-title">Video-generation startup PixVerse raises $439M, valuation soars past $2B</div>
+      <div class="card-summary">With the cash, the company aims to expand its world model offering and reach customers across geographies.</div>
+      <div class="card-meta">
+        <span>来源: TechCrunch</span>
+      </div>
+      <a class="card-link" href="https://techcrunch.com/2026/07/13/video-generation-startup-pixverse-raises-439m-valuation-soars-past-2b/" target="_blank">阅读原文 →</a>
+    </div>
     <div class="swipe-hint">左滑查看今日知识 →</div>
   </div>
 
@@ -269,19 +269,19 @@ body {
     <div class="section-label">今日知识</div>
     <div class="card knowledge-card">
       <div class="card-title">
-        <span class="knowledge-emoji">🤖</span>
-        <span>Agent 的记忆系统设计</span>
+        <span class="knowledge-emoji">🧠</span>
+        <span>Llama 生态的模型微调实战要点</span>
       </div>
-      <div class="card-summary">AI Agent 的记忆系统通常分为三层：① 工作记忆（Working Memory）——当前对话上下文和任务状态，相当于”当前思考的内容”，最直接但容量受上下文窗口限制；② 短期记忆（Short-term Memory）——近期交互历史的摘要或关键信息，通过滑动窗口或摘要压缩持久化到向量数据库；③ 长期记忆（Long-term Memory）——用户偏好、历史知识、经验教训等结构化存储，支持跨会话检索和更新。关键技术包括：记忆重要性评分（自动判断什么值得记住）、记忆衰减机制（按时间和使用频率加权）、记忆冲突消解（新旧信息矛盾时的处理策略）。好的记忆系统是 Agent 实现”个性化”和”持续学习”的关键。</div>
-      <div class="card-meta">参考: AI Agent Memory System Design</div>
+      <div class="card-summary">用 Llama（及其他开源模型）做垂直场景微调的关键要点：① 数据质量远重于数量——1000 条高质量标注数据比 10 万条噪声数据效果好，人工 review 每条训练样本是否格式正确、答案准确；② 选择正确的基座——Llama-3-Instruct 系列已经过指令微调，通常比 base model 更适合垂直微调（因为已经理解了指令格式）；③ 微调参数建议——LoRA r=16~64, alpha=2r, 目标模块为所有线性层（q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj），lr≈2e-4；④ 过拟合检测——每个 epoch 后在独立的验证集上测 loss 和任务指标，loss 下降但任务指标恶化意味着过拟合；⑤ 与 RAG 的关系——微调教模型”如何思考”，RAG 提供”思考的依据”，两者互补而非替代。微调让模型理解你的领域术语和任务格式，RAG 让模型访问实时和私有信息。</div>
+      <div class="card-meta">参考: Practical Guide to Fine-Tuning Open-Source LLMs</div>
     </div>
 <div class="card knowledge-card">
       <div class="card-title">
-        <span class="knowledge-emoji">💡</span>
-        <span>AI 产品的定价策略：Token 经济 vs. 价值定价</span>
+        <span class="knowledge-emoji">🧠</span>
+        <span>模型的 Context Window 及其工程意义</span>
       </div>
-      <div class="card-summary">AI 产品定价面临独特挑战：成本（推理算力）和用户价值之间缺乏线性关系。目前三种主流策略：① 按用量计费（Token-based）——按实际消耗 token 收费，透明但用户难以预估成本，适合 API 产品；② 订阅制（SaaS-style）——固定月费不限量或用额度包，便于用户预算规划，但需要对用量分布建模确保盈利（需考虑 heavy user 的 GPU 成本）；③ 结果导向定价（Outcome-based）——按交付的有效结果收费（如 AI 客服按解决的工单量），与客户价值强对齐但计费复杂。建议策略：早期用订阅制降低用户决策门槛获取数据飞轮，中期引入用量额度分层定价，成熟期向结果导向演进。关键指标：毛利率（Gross Margin）——AI 推理成本占收入的百分比，建议控制在 30% 以内。</div>
-      <div class="card-meta">参考: AI 产品商业化定价策略</div>
+      <div class="card-summary">上下文窗口（Context Window）是 LLM 能”同时看到”的最大 token 数量，直接影响应用架构设计。当前主流模型上下文窗口：GPT-4o (128K)、Claude 4 (200K)、Gemini 2.5 Pro (1M)、Llama 4 (1M)。长上下文带来的工程影响：① 不要盲目塞满窗口——长上下文推理速度慢、成本高，且模型在中间位置的注意力衰减（Lost in the Middle 效应）；② 关键信息放开头和结尾，中间内容被模型注意的概率最低；③ 长文档处理首选”分治+聚合”策略而非一次塞入，特别是摘要和多跳推理任务；④ 长上下文与 RAG 的选择——如果每次都需完整文档上下文，长上下文窗口优于 RAG（简化架构）；如果需要高频检索跨文档信息，RAG 仍不可替代。</div>
+      <div class="card-meta">参考: Lost in the Middle & Long Context Evaluation</div>
     </div>
     <div class="swipe-hint">← 右滑返回 &nbsp;|&nbsp; 左滑查看论文 →</div>
   </div>
