@@ -238,20 +238,12 @@ body {
   <div class="section" id="section-news">
     <div class="section-label">今日资讯</div>
     <div class="card">
-      <div class="card-title">Uber’s product chief on hotels, robotaxis, and why the company doesn’t want to be “everything for everyone”</div>
-      <div class="card-summary">Uber Chief Product Officer Sachin Kansal walks TechCrunch through the company's financial-services ambitions, its increasingly complicated relationship with Waymo, its new AV Labs data operation, and </div>
-      <div class="card-meta">
-        <span>来源: TechCrunch</span>
-      </div>
-      <a class="card-link" href="https://techcrunch.com/2026/07/13/ubers-product-chief-on-hotels-robotaxis-and-why-the-company-doesnt-want-to-be-everything-for-everyone/" target="_blank">阅读原文 →</a>
-    </div>
-<div class="card">
-      <div class="card-title">ABot-N1: Toward a General Visual Language Navigation Foundation Model</div>
-      <div class="card-summary">HuggingFace 社区今日热门论文，63 票推荐</div>
+      <div class="card-title">ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory</div>
+      <div class="card-summary">HuggingFace 社区今日热门论文，59 票推荐</div>
       <div class="card-meta">
         <span>来源: HuggingFace Daily Papers</span>
       </div>
-      <a class="card-link" href="https://huggingface.co/papers/2607.10383" target="_blank">阅读原文 →</a>
+      <a class="card-link" href="https://huggingface.co/papers/2607.10350" target="_blank">阅读原文 →</a>
     </div>
 <div class="card">
       <div class="card-title">Already rich, already successful, why the last wave of tech winners is grinding again</div>
@@ -261,6 +253,14 @@ body {
       </div>
       <a class="card-link" href="https://techcrunch.com/2026/07/13/already-rich-already-successful-why-the-last-wave-of-tech-winners-is-grinding-again/" target="_blank">阅读原文 →</a>
     </div>
+<div class="card">
+      <div class="card-title">ABot-N1: Toward a General Visual Language Navigation Foundation Model</div>
+      <div class="card-summary">HuggingFace 社区今日热门论文，63 票推荐</div>
+      <div class="card-meta">
+        <span>来源: HuggingFace Daily Papers</span>
+      </div>
+      <a class="card-link" href="https://huggingface.co/papers/2607.10383" target="_blank">阅读原文 →</a>
+    </div>
     <div class="swipe-hint">左滑查看今日知识 →</div>
   </div>
 
@@ -269,19 +269,19 @@ body {
     <div class="section-label">今日知识</div>
     <div class="card knowledge-card">
       <div class="card-title">
-        <span class="knowledge-emoji">🧠</span>
-        <span>Prompt Engineering 核心技巧：思维链 (Chain-of-Thought)</span>
+        <span class="knowledge-emoji">👁️</span>
+        <span>多模态大模型的三种主流架构</span>
       </div>
-      <div class="card-summary">思维链（CoT）提示通过在 prompt 中加入”让我们一步一步思考”（Let's think step by step）引导模型展示中间推理步骤，显著提升数学推理、逻辑推理等复杂任务的准确率。CoT 分为 Few-shot CoT（提供带推理步骤的示例）和 Zero-shot CoT（仅用触发句）。进阶技巧包括：自一致性（Self-Consistency）——生成多条推理路径后投票选最优结果；思维树（Tree of Thoughts）——在推理空间中搜索不同分支并回溯；以及 ReAct——将推理（Reasoning）与行动（Acting）交替进行，在知识密集型任务中效果更佳。</div>
-      <div class="card-meta">参考: Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (Wei et al., 2022)</div>
+      <div class="card-summary">当前多模态大模型主要有三种架构路线：① 视觉编码器+LLM 拼接式（如 LLaVA、GPT-4V）——用预训练的视觉编码器（ViT）将图像转为 token 序列，经投影层对齐后与文本 token 拼接，送入 LLM 生成回答；训练成本低，可利用现有 LLM 和视觉模型。② 原生多模态（如 Gemini、Chameleon）——从预训练阶段就用图文混合 token 训练，在架构层面统一处理文本和图像生成；上限高但训练成本巨大。③ 专家混合式（如 LLaMA-Vision）——多模态信号走不同的专家路径，在特定层融合；在计算效率和跨模态理解精度间取平衡。目前①路线性价比最高，是大多数开源方案的基座。</div>
+      <div class="card-meta">参考: 多模态大语言模型架构综述</div>
     </div>
 <div class="card knowledge-card">
       <div class="card-title">
-        <span class="knowledge-emoji">🤖</span>
-        <span>Tool Use / Function Calling 的进阶：自动化工具发现与编排</span>
+        <span class="knowledge-emoji">🧠</span>
+        <span>大模型的 Scaling Laws：规模定律的三个维度</span>
       </div>
-      <div class="card-summary">当 Agent 面对大量工具时（数十到数百个 API），传统的”把全部工具 Schema 塞入 prompt“变得不现实。进阶方案：① 工具检索（Tool Retrieval）——用小 embedding 模型将工具描述向量化，用户意图动态召回最相关的 top-k 工具（像 mini-RAG），大幅减少 prompt 中的工具定义量；② 工具组合推理（Tool Composition）——LLM 被赋予”使用工具的元能力”，将多个原子操作编排为工具链，如”生成图表” = 查询数据 API → 数据清洗 → 调用图表生成工具；③ 自动化 API 适配——基于 OpenAPI/Swagger 规范自动生成 LLM 可理解的工具描述，减少人工编写 Schema 的工作。Gorilla 和 NexusRaven 等专用模型在工具选择准确率上优于同等规模的通用模型。</div>
-      <div class="card-meta">参考: Gorilla: Large Language Model Connected with Massive APIs</div>
+      <div class="card-summary">Scaling Laws 是大模型时代的”第一性原理”。OpenAI 2020 年论文和 DeepMind 的 Chinchilla 论文共同揭示了模型性能与三个要素的关系：模型参数量（N）、训练数据量（D）和计算量（C）。关键结论：① 在给定计算预算下，存在最优的模型大小和数据量分配——Chinchilla 定律建议模型参数和训练 token 大致 1:20 的配比；② 很多大模型（如 GPT-3）实际上”训练不足”（undertrained），在更小的模型上投入更多数据效果更优；③ Scaling Laws 也推动了小模型技术的发展——通过更强的数据质量（数据过滤、合成数据）可以在较小模型尺寸上获得超出 Scaling Law 预测的性能。理解 Scaling Laws 有助于判断模型技术报告中的关键数据点。</div>
+      <div class="card-meta">参考: Training Compute-Optimal Large Language Models (Hoffmann et al., 2022)</div>
     </div>
     <div class="swipe-hint">← 右滑返回 &nbsp;|&nbsp; 左滑查看论文 →</div>
   </div>
