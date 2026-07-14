@@ -238,14 +238,6 @@ body {
   <div class="section" id="section-news">
     <div class="section-label">今日资讯</div>
     <div class="card">
-      <div class="card-title">4D Human-Scene Reconstruction from Low-Overlap Captures</div>
-      <div class="card-summary">HuggingFace 社区今日热门论文，28 票推荐</div>
-      <div class="card-meta">
-        <span>来源: HuggingFace Daily Papers</span>
-      </div>
-      <a class="card-link" href="https://huggingface.co/papers/2607.09125" target="_blank">阅读原文 →</a>
-    </div>
-<div class="card">
       <div class="card-title">Uber’s product chief on hotels, robotaxis, and why the company doesn’t want to be “everything for everyone”</div>
       <div class="card-summary">Uber Chief Product Officer Sachin Kansal walks TechCrunch through the company's financial-services ambitions, its increasingly complicated relationship with Waymo, its new AV Labs data operation, and </div>
       <div class="card-meta">
@@ -254,12 +246,20 @@ body {
       <a class="card-link" href="https://techcrunch.com/2026/07/13/ubers-product-chief-on-hotels-robotaxis-and-why-the-company-doesnt-want-to-be-everything-for-everyone/" target="_blank">阅读原文 →</a>
     </div>
 <div class="card">
-      <div class="card-title">ABot-N1: Toward a General Visual Language Navigation Foundation Model</div>
-      <div class="card-summary">HuggingFace 社区今日热门论文，65 票推荐</div>
+      <div class="card-title">Video-generation startup PixVerse raises $439M, valuation soars past $2B</div>
+      <div class="card-summary">With the cash, the company aims to expand its world model offering and reach customers across geographies.</div>
+      <div class="card-meta">
+        <span>来源: TechCrunch</span>
+      </div>
+      <a class="card-link" href="https://techcrunch.com/2026/07/13/video-generation-startup-pixverse-raises-439m-valuation-soars-past-2b/" target="_blank">阅读原文 →</a>
+    </div>
+<div class="card">
+      <div class="card-title">4D Human-Scene Reconstruction from Low-Overlap Captures</div>
+      <div class="card-summary">HuggingFace 社区今日热门论文，30 票推荐</div>
       <div class="card-meta">
         <span>来源: HuggingFace Daily Papers</span>
       </div>
-      <a class="card-link" href="https://huggingface.co/papers/2607.10383" target="_blank">阅读原文 →</a>
+      <a class="card-link" href="https://huggingface.co/papers/2607.09125" target="_blank">阅读原文 →</a>
     </div>
     <div class="swipe-hint">左滑查看今日知识 →</div>
   </div>
@@ -269,19 +269,19 @@ body {
     <div class="section-label">今日知识</div>
     <div class="card knowledge-card">
       <div class="card-title">
-        <span class="knowledge-emoji">🧠</span>
-        <span>模型量化技术：让大模型在手机上运行</span>
+        <span class="knowledge-emoji">💡</span>
+        <span>Data Flywheel 的数据质量标准</span>
       </div>
-      <div class="card-summary">模型量化（Quantization）通过降低模型权重的数值精度来减少内存占用和推理延迟。主流量化方案：① GPTQ——基于近似二阶信息的训练后量化，4-bit 下性能损失可控制在 1-2% 以内，但需要校准数据集；② AWQ——发现权重通道中 1% 的显著权重承载了大部分信息，保护这些权重的精度后其他可激进量化；③ GGUF/llama.cpp——面向 CPU 和边缘设备的量化格式，支持混合精度（Q4_K_M 等），在 M2 MacBook 上就能以合理速度运行 70B 模型。量化核心权衡：精度 vs. 速度 vs. 内存。手机端典型配置：4-bit 量化 + 8B 模型 ≈ 5GB 内存，搭配 Metal/CoreML 加速可达每秒 20+ tokens。量化让设备端 AI 成为可能，是 Edge AI 和隐私计算的关键技术。</div>
-      <div class="card-meta">参考: A Survey of Quantization Methods for Efficient Neural Network Inference</div>
+      <div class="card-summary">AI 数据飞轮的质量取决于输入数据的质量——垃圾进垃圾出。数据质量标准框架：① 准确性——数据是否反映真实情况？来源是否可靠？对于用户行为数据，需区分”用户解决了问题”和”用户放弃了”（隐式反馈的噪声很大）；② 多样性——数据是否覆盖了所有目标场景和用户群体？长尾覆盖不足会导致模型偏见；③ 新鲜度——数据是否反映当前状态？在快速变化的领域（如编程框架、时事），半年前的数据就可能有害；④ 代表性——训练数据分布是否和目标使用分布一致？Office 文档和 Reddit 帖子的语言分布截然不同。实操建议：为数据飞轮建立”数据质量仪表盘”，监控各维度的健康度；对用户反馈数据做”反事实过滤”——区分用户是因为 AI 做得好而满意，还是因为替代方案太差而忍受。</div>
+      <div class="card-meta">参考: Data Quality for AI Data Flywheels</div>
     </div>
 <div class="card knowledge-card">
       <div class="card-title">
-        <span class="knowledge-emoji">💡</span>
-        <span>AI 产品的用户 onboarding：从”试用”到”习惯”的设计</span>
+        <span class="knowledge-emoji">🧠</span>
+        <span>RAG（检索增强生成）工作原理</span>
       </div>
-      <div class="card-summary">AI 产品的用户上手（onboarding）比传统 SaaS 更具挑战性——用户不知道自己应该期望什么水平的 AI 表现。有效的 onboarding 设计原则：① 即时展示价值——用户在 1 分钟内看到”AI 为我做了什么”，设置默认输入或魔术般的示例输入让用户直接点”生成”；② 逐步揭示复杂度——初次使用只展示核心功能（如”输入问题→获得答案”），高级功能（自定义 prompt、调整参数）在用户熟悉后渐进解锁；③ 管理预期——明确告知 AI 的能力边界和最佳使用场景，过度承诺会导致信任崩塌；④ “魔法时刻”设计——引导用户完成一个他本来做不到的任务（如”用你的文档生成一份演示文稿”），这是形成习惯的关键时刻。反模式：首次使用时扔一个空白 canvas 让用户”自己探索”——AI 的空状态比传统软件的体感更差。</div>
-      <div class="card-meta">参考: AI Product Onboarding Design Patterns</div>
+      <div class="card-summary">RAG（Retrieval-Augmented Generation）将信息检索与大语言模型生成结合。工作流程：① 用户提问后，先用检索模型在外部知识库中检索相关文档片段；② 将检索到的文档作为上下文与原始问题拼接成 prompt；③ LLM 基于增强后的 prompt 生成回答。RAG 的核心优势：减少幻觉（模型基于真实文档回答）、知识可实时更新（无需重训模型）、可溯源（回答可对应到具体文档）。关键技术点包括 chunking 策略、embedding 模型选择、检索重排序（rerank）以及 HyDE（假设文档嵌入）等查询增强技巧。</div>
+      <div class="card-meta">参考: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (Lewis et al., 2020)</div>
     </div>
     <div class="swipe-hint">← 右滑返回 &nbsp;|&nbsp; 左滑查看论文 →</div>
   </div>
